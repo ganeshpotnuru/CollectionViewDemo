@@ -1,0 +1,17 @@
+*.xcuserstate
+!default.pbxuser
+xcuserdata/
+
+## Build generated
+build/
+DerivedData/
+
+## Other
+*.moved-aside
+*.xcuserstate
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
