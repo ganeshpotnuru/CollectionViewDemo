@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func getAlbums() {
         APIManager.fetchInformation(withUrl: "https://jsonplaceholder.typicode.com/photos", params: nil, succesResponse: { (json, statuscode) in
             
@@ -32,8 +32,8 @@ class ViewController: UIViewController {
             self.arrPhotos = json.arrayValue.map { return Album(with: $0)
                 self.collectionView?.reloadData()
             }
-            print(self.arrPhotos.count)
-        }) { (error) in
+        })
+        { (error) in
             let alertVC = UIAlertController(title: "Error", message: error.description, preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertVC.addAction(alertAction)
